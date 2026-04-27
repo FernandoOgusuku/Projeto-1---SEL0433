@@ -1,8 +1,8 @@
 # Projeto-1---SEL0433
 
 <div align="center">
-  [<img src="logo_eesc.jpg" height="80" alt="Logo EESC"> &nbsp;&nbsp;&nbsp;&nbsp;](https://private-user-images.githubusercontent.com/163347519/584434825-53c7d4b1-e3ab-4be6-bcf3-ad2e8c9fc219.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzczMjIyMTUsIm5iZiI6MTc3NzMyMTkxNSwicGF0aCI6Ii8xNjMzNDc1MTkvNTg0NDM0ODI1LTUzYzdkNGIxLWUzYWItNGJlNi1iY2YzLWFkMmU4YzlmYzIxOS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQyN1QyMDMxNTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNGYyYmVlMDlkYzFjZWY3MmEyMjY0NzY5NGIxOWQwOWJiN2M5NWQ5NmQ4ZDE0Mzg2OTAyMDRiMzYwOTIxZDVmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.6gOfFS5cDbiS7f3mTMCbaAZuOaelYcSQ06bIXlMiaEs)
-  <img src="sel.jpg" height="80" alt="Logo SEL">
+  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/85e9f8fe-16f4-411e-a2f6-16eb5d4be811" />
+  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/14929db5-fcab-4ebd-8690-3be7dd07848e" />
   <br><br>
   <b>Departamento de Engenharia Elétrica e de Computação</b><br>
   <b>EESC USP | SEL0433 - Aplicação de Microprocessadores</b><br>
@@ -11,7 +11,7 @@
   <h1>Projeto 1: "Sistema de Dosagem Rotativa"</h1>
   <i>Implementação em Linguagem Assembly (Microcontrolador MCS-51)</i>
   <br><br>
-  <img src="usp.jpg" height="80" alt="Logo USP">
+  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/101f5a73-e478-4a2b-b461-862b3545eace" />
 </div>
 
 <br>
