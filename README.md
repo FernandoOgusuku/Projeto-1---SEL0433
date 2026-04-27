@@ -1,8 +1,8 @@
 # Projeto-1---SEL0433
 
 <div align="center">
-  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/85e9f8fe-16f4-411e-a2f6-16eb5d4be811" />
-  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/14929db5-fcab-4ebd-8690-3be7dd07848e" />
+  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/8f68842b-2353-4898-a1ef-581c7dfbcb02" />
+  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/93cc5a3b-ca74-4bfc-9819-ecaee6ea8ae8" />
   <br><br>
   <b>Departamento de Engenharia Elétrica e de Computação</b><br>
   <b>EESC USP | SEL0433 - Aplicação de Microprocessadores</b><br>
@@ -11,7 +11,8 @@
   <h1>Projeto 1: "Sistema de Dosagem Rotativa"</h1>
   <i>Implementação em Linguagem Assembly (Microcontrolador MCS-51)</i>
   <br><br>
-  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/101f5a73-e478-4a2b-b461-862b3545eace" />
+  <img height="80" alt="Image" src="https://github.com/user-attachments/assets/1bf8fe88-9069-4698-b9a1-080933eb2702" />
+
 </div>
 
 <br>
@@ -116,7 +117,7 @@ MAIN:
 
 
 
-## Guia de Simulação e Testes
+## 6 Guia de Simulação e Testes
 
 Para validar a solução matemática e de hardware apresentada, siga os passos no EdSim51. Os resultados da execução e a resposta do sistema aos comandos externos podem ser observados nas figuras abaixo.
 
@@ -140,7 +141,7 @@ Para validar a solução matemática e de hardware apresentada, siga os passos n
 * **Limite Natural:** Ao atingir o valor 9 (Figura 1), o próximo pulso retorna o display a 0 via interrupção (Vetor 001BH), garantindo continuidade sem travamentos.
 * **Inversão Reativa:** Ao pressionar `SW0` (P2.0), o sistema responde instantaneamente: o motor inverte a rotação, o contador na RAM é zerado e o Ponto Decimal sinaliza o novo sentido (Figura 2).
 
-## Conclusão
+## 7 Conclusão
 
 A conclusão deste projeto evidencia o sucesso na implementação de um firmware robusto para o controlo de um sistema de dosagem rotativa, utilizando a arquitetura do microcontrolador 8051. Através da metodologia de Aprendizagem Baseada em Problemas (PBL), o desenvolvimento ocorreu de forma evolutiva: partindo do controlo básico de I/O digital e mapeamento de displays de 7 segmentos nos primeiros *checkpoints*, até culminar na gestão complexa de periféricos internos nesta entrega final.
 
@@ -152,7 +153,7 @@ Por fim, a lógica de *reset* automático da contagem ao atingir o limite estipu
 
 ---
 
-## Referências
+## 8 Referências
 
 1. OLIVEIRA, Pedro. **Slides, Apostilas e Notas de Aula da Disciplina SEL0433 - Aplicação de Microprocessadores**. Escola de Engenharia de São Carlos (EESC-USP). [Principal Referência Teórica e Técnica].
 2. OLIVEIRA, Pedro. **Códigos – Conceitos Iniciais (Ambiente EdSim51)**. Arquivo digital (.zip) de suporte e exemplos práticos da disciplina. Disponibilizado via e-Disciplinas USP.
