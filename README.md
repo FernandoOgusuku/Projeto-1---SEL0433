@@ -128,11 +128,21 @@ Para validar a solução matemática e de hardware apresentada, siga os passos n
 
 <br>
 
-![Interface geral do simulador EdSim51 durante a execução estável do firmware.](6754.png)
-*Figura 1: Interface geral do simulador EdSim51 durante a execução estável do firmware.*
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5d5dfc66-69af-4298-84aa-040e722352f3" height="400">
+</p>
 
-![Evidência de teste reativo: Ponto Decimal (DP) aceso indicando a mudança de estado da flag F0 e o motor operando em sentido invertido após o acionamento de SW0.](inver.png)
-*Figura 2: Evidência de teste reativo: Ponto Decimal (DP) aceso indicando a mudança de estado da flag F0 e o motor operando em sentido invertido após o acionamento de SW0.*
+<p align="center">
+  <em>Figura 1: Interface geral do simulador EdSim51 durante a execução estável do firmware.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2260a50b-d3b4-49f2-bc6d-049b5d9c8a96" height="400">
+</p>
+
+<p align="center">
+  <em>Figura 2: Evidência de teste reativo: Ponto Decimal (DP) aceso indicando a mudança de estado da flag F0 e o motor operando em sentido invertido após o acionamento de SW0.</em>
+</p>
 
 <br>
 
