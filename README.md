@@ -74,3 +74,86 @@ SJMP INT_TIMER1      ; Salta para a rotina de servico
 MAIN:
     MOV SP, #2FH     ; Protege a area de sub-rotinas
     MOV 40H, #00H    ; Zera o contador na memoria RAM segura
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Guia de Simulação e Testes
+
+Para validar a solução matemática e de hardware apresentada, siga os passos no EdSim51. Os resultados da execução e a resposta do sistema aos comandos externos podem ser observados nas figuras abaixo.
+
+1. Cole o código fonte na janela de texto do EdSim51.
+2. Clique no botão **Assm** (Assemble) para compilar o código.
+3. No painel inferior, ative a caixa de seleção **Motor Enabled**.
+4. Clique no botão **Run**.
+
+<br>
+
+![Interface geral do simulador EdSim51 durante a execução estável do firmware.](6754.png)
+*Figura 1: Interface geral do simulador EdSim51 durante a execução estável do firmware.*
+
+![Evidência de teste reativo: Ponto Decimal (DP) aceso indicando a mudança de estado da flag F0 e o motor operando em sentido invertido após o acionamento de SW0.](inver.png)
+*Figura 2: Evidência de teste reativo: Ponto Decimal (DP) aceso indicando a mudança de estado da flag F0 e o motor operando em sentido invertido após o acionamento de SW0.*
+
+<br>
+
+**Comportamentos observados e validados:**
+
+* **Limite Natural:** Ao atingir o valor 9 (Figura 1), o próximo pulso retorna o display a 0 via interrupção (Vetor 001BH), garantindo continuidade sem travamentos.
+* **Inversão Reativa:** Ao pressionar `SW0` (P2.0), o sistema responde instantaneamente: o motor inverte a rotação, o contador na RAM é zerado e o Ponto Decimal sinaliza o novo sentido (Figura 2).
+
+## Conclusão
+
+A conclusão deste projeto evidencia o sucesso na implementação de um firmware robusto para o controlo de um sistema de dosagem rotativa, utilizando a arquitetura do microcontrolador 8051. Através da metodologia de Aprendizagem Baseada em Problemas (PBL), o desenvolvimento ocorreu de forma evolutiva: partindo do controlo básico de I/O digital e mapeamento de displays de 7 segmentos nos primeiros *checkpoints*, até culminar na gestão complexa de periféricos internos nesta entrega final.
+
+O principal marco técnico e arquitetural do sistema foi a transição de um modelo de varredura contínua (*polling*) para uma arquitetura orientada a eventos (*Event-Driven*), suportada por interrupções de hardware. A configuração do Timer 1 no Modo 2 (Auto-Reload de 8 bits) provou ser a estratégia mais eficiente para a contagem precisa dos pulsos mecânicos provenientes do motor. Esta abordagem libertou a Unidade Lógica e Aritmética (ALU) de ciclos de espera ociosos, permitindo que o *Loop Principal* se dedicasse exclusivamente à monitorização da chave de segurança (`SW0`). Como resultado, o sistema garantiu uma resposta imediata e determinística na inversão de marcha do motor, sem qualquer perda na integridade da contagem de voltas.
+
+Adicionalmente, o projeto reforçou a importância vital da gestão rigorosa de memória em sistemas embarcados de baixo nível. A alocação consciente do *Stack Pointer* (`SP`) para fora da zona de conflito (iniciando em `2FH`) e o armazenamento da variável de processo em endereços seguros da RAM (como o `40H`) preveniram a sobreposição de dados críticos pelos endereços de retorno das interrupções e sub-rotinas (*Stack Overflow/Overlap*). Este tipo de precaução é o que distingue um protótipo de um firmware preparado para a fiabilidade exigida num ambiente industrial real.
+
+Por fim, a lógica de *reset* automático da contagem ao atingir o limite estipulado (10 voltas), aliada ao reinício da contagem e à sinalização visual (ponto decimal) durante a alteração do sentido de rotação, cumpriram integralmente todos os requisitos funcionais definidos no guião. Esta prática consolidou o domínio dos alunos sobre a linguagem Assembly, manipulação de registos (*SFRs*) e mapeamento de *hardware*, competências que são essenciais para o desenvolvimento de soluções robustas em sistemas digitais e microprocessadores.
+
+---
+
+## Referências
+
+1. OLIVEIRA, Pedro. **Slides, Apostilas e Notas de Aula da Disciplina SEL0433 - Aplicação de Microprocessadores**. Escola de Engenharia de São Carlos (EESC-USP). [Principal Referência Teórica e Técnica].
+2. OLIVEIRA, Pedro. **Códigos – Conceitos Iniciais (Ambiente EdSim51)**. Arquivo digital (.zip) de suporte e exemplos práticos da disciplina. Disponibilizado via e-Disciplinas USP.
+3. EDSIM51. *Simulator for the 8051 Microcontroller*. Documentação oficial e manual de instruções do simulador. Disponível em: <https://www.edsim51.com/>.
