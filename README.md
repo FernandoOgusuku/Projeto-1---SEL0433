@@ -26,14 +26,14 @@
 
 ---
 
-## 📌 Objetivo e Contextualização
+## 1 Objetivo e Contextualização
 Este projeto, estruturado na metodologia PBL (*Problem-Based Learning*), visa o desenvolvimento prático do firmware em *baixo nível* para um microcontrolador da família 8051. O cenário simulado é uma linha de produção de parafusos, onde o sistema deve controlar um dosador rotativo acionado por motor DC. 
 
 A aprendizagem foca na manipulação de registradores (GPR e SFR), controle de fluxo, uso da pilha (*Stack*), sub-rotinas, I/O digital e, fundamentalmente, na aplicação de interrupções de hardware para contagem precisa de eventos externos (pulsos do motor).
 
 ---
 
-## ⚙️ Requisitos do Sistema
+## 2 Requisitos do Sistema
 De acordo com o roteiro do projeto, o sistema deve cumprir integralmente os seguintes requisitos:
 1. **Contagem de Voltas:** O motor deve realizar a contagem de suas voltas utilizando uma interrupção interna (Timer 1).
 2. **Display:** Exibição da contagem (0 a 9) em um display de 7 segmentos.
@@ -43,10 +43,10 @@ De acordo com o roteiro do projeto, o sistema deve cumprir integralmente os segu
 
 ---
 
-## 🏗️ Lógica de Implementação e Arquitetura
+## 3 Lógica de Implementação e Arquitetura
 Para assegurar a robustez do sistema, estruturamos o código separando responsabilidades. O **Loop Principal** gerencia apenas a interface (leitura da chave e atualização do display), enquanto as tarefas de tempo crítico e verificação de limite ficaram a cargo do **Hardware de Interrupção**.
 
-### Mapeamento de Memória e Prevenção de Colisão
+### 3.1 Mapeamento de Memória e Prevenção de Colisão
 Para garantir que o fluxo intenso de interrupções não sobrescreva os nossos dados de contagem, o mapa de memória e os registos de controlo foram definidos conforme a tabela abaixo:
 
 | Endereço / Reg. | Nome Lógico | Justificativa da Aplicação |
@@ -55,7 +55,7 @@ Para garantir que o fluxo intenso de interrupções não sobrescreva os nossos d
 | `40H` | Variável de Processo | Armazena o número de voltas atuais (0 a 9). Escolhido por estar distante do *Stack Pointer*. |
 | `F0` | Flag de Usuário | Bit do registo `PSW` utilizado como variável de controlo de estado direcional (1 = horário, 0 = anti-horário). |
 
-### Configuração do Temporizador (TMOD = 60H)
+### 3.2 Configuração do Temporizador (TMOD = 60H)
 Configuramos o **Timer 1 no Modo 2 (C/T = 1, M1=1, M0=0)**. Neste modo, ele funciona como um **Contador de Eventos Externos com Auto-Reload de 8 bits**.
 
 **Lógica Matemática:** Inicializamos o contador (`TL1` e `TH1`) com o valor máximo `FFH` (255 em decimal). Ao menor movimento do motor, é gerado um único pulso no pino P3.5. Como o contador já está no limite, esse pulso causa um *overflow* instantâneo, ativando a flag `TF1`, que por sua vez dispara o Vetor de Interrupção `001BH`. O hardware então recarrega automaticamente o valor `FFH`, deixando o sistema pronto para o próximo pulso.
